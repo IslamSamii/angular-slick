@@ -72,8 +72,8 @@ angular.module('slick', [])
             adaptiveHeight: scope.adaptiveHeight is "true"
             arrows: scope.arrows isnt "false"
             asNavFor: if scope.asNavFor then scope.asNavFor else undefined
-            appendArrows: if scope.appendArrows then $(scope.appendArrows) else $(element)
-            appendDots: if scope.appendDots then dom.query(scope.appendDots) else $(element)
+            appendArrows: if scope.appendArrows then dom.query(scope.appendArrows) else dom.query(element)
+            appendDots: if scope.appendDots then dom.query(scope.appendDots) else dom.query(element)
             autoplay: scope.autoplay is "true"
             autoplaySpeed: if scope.autoplaySpeed? then parseInt(scope.autoplaySpeed, 10) else 3000
             centerMode: scope.centerMode is "true"
@@ -105,8 +105,8 @@ angular.module('slick', [])
             useCSS: scope.useCSS isnt "false"
             variableWidth: scope.variableWidth is "true"
             vertical: scope.vertical is "true"
-            prevArrow: if scope.prevArrow then $(scope.prevArrow) else undefined
-            nextArrow: if scope.nextArrow then $(scope.nextArrow) else undefined
+            prevArrow: if scope.prevArrow then dom.query(scope.prevArrow) else undefined
+            nextArrow: if scope.nextArrow then dom.query(scope.nextArrow) else undefined
 
 
           slider.on 'init', (sl) ->
