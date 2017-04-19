@@ -56,7 +56,7 @@ angular.module('slick', []).directive('slick', [
         destroySlick = function () {
           return $timeout(function () {
             var slider;
-            slider = $(element);
+            slider = dom.query(element);
             slider.slick('unslick');
             slider.find('.slick-list').remove();
             return slider;
@@ -65,7 +65,7 @@ angular.module('slick', []).directive('slick', [
         initializeSlick = function () {
           return $timeout(function () {
             var currentIndex, customPaging, slider;
-            slider = $(element);
+            slider = dom.query(element);
             if (scope.currentIndex != null) {
               currentIndex = scope.currentIndex;
             }
@@ -81,7 +81,7 @@ angular.module('slick', []).directive('slick', [
               arrows: scope.arrows !== 'false',
               asNavFor: scope.asNavFor ? scope.asNavFor : void 0,
               appendArrows: scope.appendArrows ? $(scope.appendArrows) : $(element),
-              appendDots: scope.appendDots ? $(scope.appendDots) : $(element),
+              appendDots: scope.appendDots ? dom.query(scope.appendDots) : $(element),
               autoplay: scope.autoplay === 'true',
               autoplaySpeed: scope.autoplaySpeed != null ? parseInt(scope.autoplaySpeed, 10) : 3000,
               centerMode: scope.centerMode === 'true',
