@@ -53,14 +53,14 @@ angular.module('slick', [])
     link: (scope, element, attrs) ->
       destroySlick = () ->
         $timeout(() ->
-          slider = $(element)
+          slider = dom.query(element)
           slider.slick('unslick')
           slider.find('.slick-list').remove()
           slider
         )
       initializeSlick = () ->
         $timeout(() ->
-          slider = $(element)
+          slider = dom.query(element)
 
           currentIndex = scope.currentIndex if scope.currentIndex?
 
@@ -73,7 +73,7 @@ angular.module('slick', [])
             arrows: scope.arrows isnt "false"
             asNavFor: if scope.asNavFor then scope.asNavFor else undefined
             appendArrows: if scope.appendArrows then $(scope.appendArrows) else $(element)
-            appendDots: if scope.appendDots then $(scope.appendDots) else $(element)
+            appendDots: if scope.appendDots then dom.query(scope.appendDots) else $(element)
             autoplay: scope.autoplay is "true"
             autoplaySpeed: if scope.autoplaySpeed? then parseInt(scope.autoplaySpeed, 10) else 3000
             centerMode: scope.centerMode is "true"
