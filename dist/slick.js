@@ -80,8 +80,8 @@ angular.module('slick', []).directive('slick', [
               adaptiveHeight: scope.adaptiveHeight === 'true',
               arrows: scope.arrows !== 'false',
               asNavFor: scope.asNavFor ? scope.asNavFor : void 0,
-              appendArrows: scope.appendArrows ? $(scope.appendArrows) : $(element),
-              appendDots: scope.appendDots ? dom.query(scope.appendDots) : $(element),
+              appendArrows: scope.appendArrows ? dom.query(scope.appendArrows) : dom.query(element),
+              appendDots: scope.appendDots ? dom.query(scope.appendDots) : dom.query(element),
               autoplay: scope.autoplay === 'true',
               autoplaySpeed: scope.autoplaySpeed != null ? parseInt(scope.autoplaySpeed, 10) : 3000,
               centerMode: scope.centerMode === 'true',
@@ -113,8 +113,8 @@ angular.module('slick', []).directive('slick', [
               useCSS: scope.useCSS !== 'false',
               variableWidth: scope.variableWidth === 'true',
               vertical: scope.vertical === 'true',
-              prevArrow: scope.prevArrow ? $(scope.prevArrow) : void 0,
-              nextArrow: scope.nextArrow ? $(scope.nextArrow) : void 0
+              prevArrow: scope.prevArrow ? dom.query(scope.prevArrow) : void 0,
+              nextArrow: scope.nextArrow ? dom.query(scope.nextArrow) : void 0
             });
             slider.on('init', function (sl) {
               if (attrs.onInit) {
